@@ -4,7 +4,7 @@ metadata:
   name: apps-ingress
   namespace: apps
 spec:
-  IngressClassName: traefik
+  ingressClassName: traefik
   rules:
   - host: sonu.didin.in
     http:
