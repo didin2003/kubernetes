@@ -9,7 +9,7 @@ spec:
   - host: sonu.didin.in
     http:
       paths:
-        path: /
+        - path: /
           pathType: Prefix
           backend:
             service:
@@ -20,7 +20,7 @@ spec:
   - host: api.didin.in
     http:
       paths:
-        path: /
+        - path: /
           pathType: Prefix
           backend:
             service:
