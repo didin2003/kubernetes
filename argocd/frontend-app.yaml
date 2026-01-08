@@ -10,9 +10,9 @@ spec:
     targetRevision: HEAD
     path: frontend
   destination:
-      server: https://kubernetes.default.svc
-      namespace: apps
+    server: https://kubernetes.default.svc
+    namespace: apps
   syncPolicy:
-      automated:
-        prune: true
-        selfHeal: true
+    automated:
+      prune: true
+      selfHeal: true
