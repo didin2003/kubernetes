@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-frontend
+  namespace: apps
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: react
+  template:
+    metadata:
+      labels:
+        app: react
+    spec:
+      imagePullSecrets:
+        - name: regcred
+      containers:
+        - name: frontend
+          image: didin8080/frontend:2
+          ports:
+            - containerPort: 5000
+          envFrom:
+            - configMapRef:
+                name: react-config
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "200m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"

@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: apps-ingress
+  namespace: apps
+spec:
+  IngressClassName: traefik
+  rules:
+  - host: sonu.didin.in
+    http:
+      paths:
+        path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: frontend-service
+              port:
+                number: 5000
+  
+  - host: api.didin.in
+    http:
+      paths:
+        path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: backend-service
+              port:
+                number: 80
